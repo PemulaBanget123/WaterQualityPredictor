@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Water Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesAboutUs.css')}}"/>
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='Icon/LogoIcon.svg') }}">
+  </head>
+  <body>
+    <nav>
+      <div>
+        <a href="{{ url_for('home') }}">
+          <img src="{{ url_for('static', filename='Icon/LogoIcon.svg') }}" alt="My Logo" class="logo">
+        </a>      
+      </div>
+      <div id="menu-icon" class="menu-icon">
+        <img src="{{ url_for('static', filename='Icon/hamburger.svg') }}" alt="Menu Icon" class="hamburger">
+      </div>
+      <ul id="menu-list" class="hidden">
+        <li><div class="home"><a href="{{ url_for('home') }}">Home</a></div></li>
+        <li><div class="predict"><a href="{{ url_for('predict') }}">Predict</a></div></li>
+        <li><div class="AboutUs"><a href="{{ url_for('AboutUs') }}">About Us</a></div></li>
+      </ul>
+    </nav>
+
+    <!--background-->
+    <div class="container-text" id="glow">
+      <div id="background-container">
+        <img src="{{ url_for('static', filename='Icon/BGAboutUs.svg') }}" id="background">
+      </div>
+      <div class="judul-container">
+          <h1>About Us</h1>
+          <p>innovators behind the Water Prediction System from PPTI 18</p>
+      </div>
+    </div>
+    <main>
+           <section id="team">
+             <div class="layar-dalam">
+               <h3>Our Team</h3>
+               <p class="ringkasan">
+            This website was developed as part of our final project for the Machine Learning course in the Computer Science program at the Faculty of School of Computer Science. We are a team of students from PPTI 18, and our project aims to predict the quality of water based on various environmental factors using machine learning techniques. Our goal is to provide an interactive and informative platform that demonstrates how predictive models can be used to assess water quality and contribute to environmental protection efforts.
+          </p>
+          <div class="tim">
+            <div>
+              <img src="{{ url_for('static', filename='Icon/ijlal.svg') }}"/>
+              <h6>Rifzika Ijlal Fathlurrahman</h6>
+              <span>2702364124</span>
+            </div>
+            <div>
+              <img src="{{ url_for('static', filename='Icon/cecil.svg') }}"/>
+              <h6>Cecilia Supardi</h6>
+              <span>2702364042</span>
+            </div>
+            <div>
+              <img src="{{ url_for('static', filename='Icon/defin.svg') }}"/>
+              <h6>Nicholas Defin Jandera</h6>
+              <span>2702364010</span>
+            </div>
+          </div>
+      </section>
+    </main>
+      
+      <script src="{{ url_for('static', filename='js/scriptAboutUs.js') }}"></script>
+    </body>
+    </html>
+    

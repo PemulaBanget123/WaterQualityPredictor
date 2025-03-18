@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Water Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}"/>
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='Icon/LogoIcon.svg') }}">
+
+  </head>
+  <body>
+    <nav>
+      <div class="">
+        <a href="{{ url_for('home') }}">
+          <img src="{{ url_for('static', filename='Icon/LogoIcon.svg') }}" alt="My Logo" class="logo">
+      </a>      
+      </div>
+      <div id="menu-icon" class="menu-icon">
+        <img src="{{ url_for('static', filename='Icon/hamburger.svg') }}" alt="My Icon" class="hamburger">
+      </div>
+      <ul id="menu-list" class="hidden">
+        <li>
+          <div class="home"><a href="{{ url_for('home') }}">Home</a></div>
+        </li>
+        <li>
+          <div class="predict"><a href="{{ url_for('predict') }}">Predict</a></div>
+        </li>
+        <li>
+          <div class="predict"><a href="{{ url_for('AboutUs') }}">About Us</a></div>
+        </li>
+      </ul>
+    </nav>
+      <div class="container-text" id="glow">
+        <h1>Welcome to Water Prediction System</h1>
+        <p>Ensure water safety with our AI-powered prediction system. By analyzing key water quality parameters, <br> we provide insights to help you make informed decisions about water consumption and management.</p>
+        <div class="container">
+          <a href="{{ url_for('predict') }}">
+            <button id="predict">Go to Predict</button>
+          </a>         
+        </div>
+      </div>
+  <!--For carousel-->
+  <div class="carousel-section">
+    <div class="Features-detail"> 
+      <h1>Features Detail</h1>
+    </div>
+    
+    <!-- Radio buttons for carousel navigation -->
+    <div class="radio-container">
+      <input type="radio" name="position" />
+      <input type="radio" name="position" />
+      <input type="radio" name="position" />
+      <input type="radio" name="position" />
+      <input type="radio" name="position" />
+      <input type="radio" name="position" checked />
+      <input type="radio" name="position" />
+      <input type="radio" name="position" />
+      <input type="radio" name="position" />
+      <input type="radio" name="position" />
+      <input type="radio" name="position" />
+    </div>
+    
+    <div id="carousel">
+      <div class="item" id="1">
+        <h3 class="name">pH</h3>
+        <p class="occupation">Description</p>
+        <p class="testimonial">pH measures the acidity or alkalinity of water on a scale from 0 to 14. A pH of 7 is neutral, values below 7 indicate acidity, and values above 7 indicate alkalinity.</p>
+      </div>
+      <div class="item" id="2">
+        <h3 class="name">Iron (Fe)</h3>
+        <p class="occupation">Description</p>
+        <p class="testimonial">Iron is a metal commonly found in water due to natural sources, corroded pipes, or industrial waste. It can cause a metallic taste, staining, and discoloration in plumbing and laundry.</p>
+      </div>
+      <div class="item" id="3">
+        <h3 class="name">Nitrate (NO₃⁻)</h3>
+        <p class="occupation">Description</p>
+        <p class="testimonial">Nitrate is a compound containing nitrogen and oxygen, often found in fertilizers, sewage, and industrial waste. High levels in drinking water can cause health risks, especially for infants.</p>
+      </div>
+      <div class="item" id="4">
+        <h3 class="name">Chloride (Cl⁻)</h3>
+        <p class="occupation">Description</p>
+        <p class="testimonial">Chloride is a naturally occurring ion in water, often from salt deposits, seawater intrusion, or industrial pollution. High concentrations can lead to a salty taste and corrosion of metal pipes.</p>
+      </div>
+      <div class="item" id="5">
+        <h3 class="name">Turbidity</h3>
+        <p class="occupation">Description</p>
+        <p class="testimonial">Turbidity is the measure of suspended particles such as silt, clay, and microorganisms in water. Higher turbidity reduces water clarity, affects taste, and may indicate contamination.</p>
+      </div>
+      <div class="item" id="6">
+        <h3 class="name">Fluoride (F⁻)</h3>
+        <p class="occupation">Description</p>
+        <p class="testimonial">Fluoride is a mineral naturally present in water and sometimes added to prevent tooth decay. While beneficial in small amounts, excessive levels can cause dental and skeletal fluorosis.</p>
+      </div>
+      <div class="item" id="7">
+        <h3 class="name">Copper (Cu)</h3>
+        <p class="occupation">Description</p>
+        <p class="testimonial">Copper is a metal that can enter water through corrosion of copper pipes, natural deposits, or industrial waste. High levels can cause health issues such as nausea and staining.</p>
+      </div>
+      <div class="item" id="8">
+        <h3 class="name">Odor</h3>
+        <p class="occupation">Description</p>
+        <p class="testimonial">Odor in water can arise from organic matter, bacterial growth, or chemical contamination. Strong or unusual smells may indicate pollution, requiring further investigation.</p>
+      </div>
+      <div class="item" id="9">
+        <h3 class="name">Chlorine (Cl₂)</h3>
+        <p class="occupation">Description</p>
+        <p class="testimonial">Chlorine is a disinfectant commonly used in water treatment to eliminate bacteria and viruses. While essential for safety, excessive chlorine can cause a strong taste and irritation.</p>
+      </div>
+      <div class="item" id="10">
+        <h3 class="name">Manganese (Mn)</h3>
+        <p class="occupation">Description</p>
+        <p class="testimonial">Manganese is a mineral naturally occurring in groundwater, often found alongside iron. High levels can cause black staining, unpleasant taste, and potential health concerns.</p>
+      </div>
+      <div class="item" id="11">
+        <h3 class="name">Total Dissolved Solids</h3>
+        <p class="occupation">Description</p>
+        <p class="testimonial">TDS measures the total concentration of dissolved minerals, salts, and metals in water. Elevated levels can affect taste, cause scaling in pipes, and indicate potential contamination.</p>
+      </div>
+    </div>
+  </div> 
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+<div id="background-container">
+  <img src="{{ url_for('static', filename='Icon/Background.svg') }}" id="background">
+</div>
+</html>

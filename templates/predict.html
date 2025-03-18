@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Water Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesPredict.css') }}"/>
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='Icon/LogoIcon.svg') }}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- SweetAlert2 -->
+</head>
+<body>
+    <nav>
+        <div>
+            <a href="{{ url_for('home') }}">
+                <img src="{{ url_for('static', filename='Icon/LogoIcon.svg') }}" alt="My Logo" class="logo">
+            </a>      
+        </div>
+        <div id="menu-icon" class="menu-icon">
+            <img src="{{ url_for('static', filename='Icon/hamburger.svg') }}" alt="My Icon" class="hamburger">
+        </div>
+        <ul id="menu-list" class="hidden">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><div class="predict"><a href="{{ url_for('predict') }}">Predict</a></div></li>
+            <li><a href="{{ url_for('AboutUs') }}">About Us</a></li>
+        </ul>
+    </nav>
+    <div class="container-text" id="glow">
+        <div id="background-container">
+            <img src="{{ url_for('static', filename='Icon/Background.svg') }}" id="background">
+        </div>
+        <div class="judul-container">
+            <h1>Water Quality Prediction</h1>
+            <p> Enter the water quality parameters, and our system will analyze them to determine overall water quality. <br> Stay informed and take proactive steps toward cleaner, safer water.</p>
+            <div class="predict-container">
+                <button id="predict-btn">Let's Predict</button>
+                <button id="howToUse-btn">How To Use</button>
+            </div>
+        </div>
+    </div>
+    <main>
+        <div class="container" id="predict-section">
+            <div class="title" id="judul-prediction">Water Prediction</div>
+            <div class="content">
+                <form action="/predict" method="POST">
+                    <div class="user-details">
+                        <div class="input-box">
+                            <span class="details">pH</span>
+                            <input type="number" name="pH" placeholder="Enter water pH (0-14)" required min="0" max="14" step="any">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Iron</span>
+                            <input type="number" name="Iron" placeholder="Enter Iron level" required min="0" step="any">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Nitrate</span>
+                            <input type="number" name="Nitrate" placeholder="Enter Nitrate level" required min="0" step="any">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Chloride</span>
+                            <input type="number" name="Chloride" placeholder="Enter Chloride level" required min="0" step="any">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Turbidity</span>
+                            <input type="number" name="Turbidity" placeholder="Enter Turbidity level" required min="0" step="any">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Fluoride</span>
+                            <input type="number" name="Fluoride" placeholder="Enter Fluoride level" required min="0" step="any">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Copper</span>
+                            <input type="number" name="Copper" placeholder="Enter Copper level" required min="0" step="any">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Odor</span>
+                            <input type="number" name="Odor" placeholder="Enter Odor level" required min="0" step="any">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Chlorine</span>
+                            <input type="number" name="Chlorine" placeholder="Enter Chlorine level" required min="0" step="any">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Manganese</span>
+                            <input type="number" name="Manganese" placeholder="Enter Manganese level" required min="0" step="any">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Total Dissolved Solids</span>
+                            <input type="number" name="Total Dissolved Solids" placeholder="Enter Total Dissolved Solids level" required min="0" step="any">
+                        </div>
+                    </div>
+                    <div class="button">
+                        <input type="submit" value="Predict Now">
+                    </div>
+                </form>
+            </div>
+
+            <!-- Flash messages (Hidden, will be handled by JavaScript) -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            <span id="flash-message" data-message="{{ messages[0][1] }}" data-category="{{ messages[0][0] }}"></span>
+            {% endif %}
+            {% endwith %}
+        </div>        
+    </main>
+    <!--How To Use section-->
+    <div id="howtouse-section">
+        <div class="judul-Howtouse" id="judul-Howtouse">
+            <h2>How to Use the Water Quality Prediction Tool</h2>
+            <p>Ensuring access to clean and safe water is essential for health and well-being. Our Water Quality Prediction Tool helps you determine whether water is safe for human consumption based on key parameters.<br> <strong> Follow the steps below to get started:</strong></p>
+        </div>
+        <section id="tutorial">
+            <!-- Step 1 -->
+            <div class="tutorial-step fade-in step1">
+                <div class="text">
+                    <h2>Step 1: Input Water Quality Parameters</h2>
+                    <h4>Enter numerical values for each water quality component:</h4>
+                    <ul>
+                        <li><strong>pH</strong> (Range: 0-14)</li>
+                        <li><strong>Nitrate</strong>, <strong>Turbidity</strong>, <strong>Copper</strong>, <strong>Chlorine</strong></li>
+                        <li><strong>Total Dissolved Solids</strong>, <strong>Iron</strong>, <strong>Chloride</strong>, <strong>Fluoride</strong></li>
+                        <li><strong>Odor</strong>, <strong>Manganese</strong></li>
+                    </ul>
+                </div>
+                <div class="image">
+                    <img src="{{ url_for('static', filename='Icon/input.svg') }}"alt="Step 1: Enter Inputs">
+                </div>
+            </div>
+    
+            <!-- Step 2 -->
+            <div class="tutorial-step fade-in reverse">
+                <div class="image">
+                    <img src="{{ url_for('static', filename='Icon/predict-klik.svg') }}" alt="Step 2: Submit for Prediction">
+                </div>
+                <div class="text">
+                    <h2>Step 2: Submit the Data for Prediction</h2>
+                    <p>After filling in all required fields, click the <strong>"Predict Now"</strong> button to process the data.</p>
+                </div>
+            </div>
+    
+            <!-- Step 3 -->
+            <div class="tutorial-step fade-in step3">
+                <div class="text">
+                    <h2>Step 3: Review the Prediction Result</h2>
+                    <h4>The system will display a pop-up message:</h4>
+                    <ul>
+                        <li><span class="safe">✅ Safe:</span> The water is <strong>safe</strong> for use.</li>
+                        <li><span class="unsafe">❌ Unsafe:</span> The water is <strong>unsafe</strong> and requires treatment.</li>
+                    </ul>
+                </div>
+                <div class="image">
+                    <img src="{{ url_for('static', filename='Icon/pop-up.svg') }}" alt="Step 3: View Prediction Result">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/scriptPredict.js') }}"></script>
+</body>
+</html>

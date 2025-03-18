@@ -1,0 +1,602 @@
+/* Regular weight */
+@font-face {
+  font-family: 'Poppins';
+  src: url('../Asset/Poppins/Poppins-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Light weight */
+@font-face {
+  font-family: 'Poppins';
+  src: url('../Asset/Poppins/Poppins-Light.ttf') format('truetype');
+  font-weight: 300;  /* Light weight */
+  font-style: normal;
+}
+
+/* Bold weight */
+@font-face {
+  font-family: 'Poppins';
+  src: url('../Asset/Poppins/Poppins-Bold.ttf') format('truetype');
+  font-weight: bold;  /* Bold weight */
+  font-style: normal;
+}
+
+/* Extra Bold weight */
+@font-face {
+  font-family: 'Poppins';
+  src: url('../Asset/Poppins/Poppins-ExtraBold.ttf') format('truetype');
+  font-weight: 800;  /* Extra bold weight */
+  font-style: normal;
+}
+
+/* Black weight */
+@font-face {
+  font-family: 'Poppins';
+  src: url('../Asset/Poppins/Poppins-Black.ttf') format('truetype');
+  font-weight: 900;  /* Black weight */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Yeseva';
+  src: url('../Asset/Yeseva_One/YesevaOne-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Berkshire';
+  src: url('../Asset/Berkshire_Swash/BerkshireSwash-Regular.ttf') format('truetype');
+}
+
+*,
+html {
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+body, html {
+height: 100%;
+
+}
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  display: none; /* Untuk Chrome, Safari, Edge */
+}
+
+body {
+background-color: white;
+overflow-x: hidden;
+padding-top: 80px; 
+}
+nav {
+  position: fixed; /* Stick navbar to the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Ensure proper vertical alignment */
+  padding-left: 0.5rem;
+  padding-right: 1rem;
+  z-index: 1000; /* Ensure it's above other elements */
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+  background-color: #fff;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0; /* Remove default margin */
+  padding: 0;
+}
+
+nav div .logo {
+  width: 50px;
+  margin-left: 2rem;
+  margin-top: 0.5rem;
+}
+
+nav div .hamburger {
+  width: 50px;
+  margin-right: 2rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  color: #191919;
+  font-weight: 600;
+  padding: 8px 0;
+  transition: all 300ms ease;
+}
+
+nav ul li a:hover {
+  color: #30abf3;
+  font-size: 20px;
+}
+
+.predict {
+  border-bottom: 2px solid #30abf3;
+}
+
+/* Background Image Styling */
+#background {
+  width: 100%;
+  height: 100vh; /* Full height of the viewport */
+  object-fit: cover; /* Ensures the image covers the screen */
+  position: absolute;
+  left: 0;
+  z-index: -2; /* Ensures it's behind other content */
+}
+
+/* Overlay Effect */
+#background-container {
+  position: absolute; /* Ensure proper stacking context */
+  width: 100%;
+  height: 100vh; /* Full height to match the background */
+}
+
+/* Bottom Gradient Overlay */
+#background-container::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20%; /* Adjust height as needed */
+  background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(241, 241, 241, 0.8), rgba(241, 241, 241, 0));
+  z-index: -1; /* Ensure overlay is above the background image but behind content */
+}
+
+
+/* Center the container */
+main {
+  display: flex;
+  justify-content: center;  /* Centers horizontally */
+  align-items: center;  /* Centers vertically */
+}
+
+.container-text{
+  display: block;
+  text-align: center;
+  position: relative;
+  font-family: 'Poppins',system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  /* top: 45%; */
+  border: 0;
+  /* left: 48%; */
+  line-height: 1.5;
+  text-transform: capitalize;
+  font-size: 1.5vw;
+  font-weight: normal;
+  justify-content: center;
+  color: #ffffff;
+  height: 100%;
+  margin-bottom: 3rem;
+  
+  /* border: 1px solid rebeccapurple; */
+}
+
+.judul-container{
+  position: relative;
+  transform: translate(0%, 60%);
+}
+
+.container-text h1{
+  color: #015a8e;
+  /* background: -webkit-linear-gradient(#fff, #b79f6e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  font-size: 3.5vw;
+  font-weight: bold;
+  text-align: center;
+  transition: text-shadow 0.4s ease-in-out;
+}
+
+.container-text h1:hover {
+  text-shadow: 0 0 10px rgba(145, 215, 255, 0.8),
+               0 0 20px rgba(145, 215, 255, 0.6),
+               0 0 30px rgba(145, 215, 255, 0.4);
+}
+
+.container-text p{
+  /* border: 1px solid blue; */
+  padding: 1rem;
+  width: 100%;
+}
+
+.predict-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+}
+.predict-container button{
+  font-weight: bold;
+  font-size: medium;
+  color: #ffffff;
+  text-align: center;
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+  background-color: #40a45f;
+  width: 180px;
+  height: 45px;
+  cursor: pointer;
+}
+
+.predict-container button:hover{
+  border: 4px solid #ffffff;
+  border-spacing: 30px;
+  border-radius: 20px;
+  background-color: #1f6c37;
+  transition: all;
+}
+
+
+/* Container styling */
+.container {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  z-index: 10; /* Ensures it stays above the background */
+  max-width: 700px;
+  width: 100%;
+  margin-bottom: 5rem;
+}
+
+.container-text p{
+  font-size: 1.1vw;
+  font-weight: normal;
+  text-align: center; 
+  color: black;
+  padding-left: 15rem;
+  padding-right: 15rem;
+  margin-bottom: 0.7rem;
+}
+
+
+.menu-icon {
+/* background-color: tomato; */
+font-size: 28px;
+display: none;
+}
+.container .title {
+    font-size: 25px;
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 5px ;
+}
+.container .title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 70px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #71b7e6, #40a45f);
+}
+.content form .user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box {
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+  /* border: 2px solid red; */
+}
+form .input-box span.details {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+    /* border: 2px solid red; */
+  }
+  .user-details .input-box input:focus,
+  .user-details .input-box input:valid {
+      border-color: #71b7e6;
+  }
+
+form .category {
+  display: flex;
+  width: 80%;
+  margin: 14px 0;
+  justify-content: space-between;
+}
+form .category label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+form .category label .dot {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+  /* border: 2px solid red; */
+}
+#dot-1:checked~.category label .one,
+#dot-2:checked~.category label .two,
+#dot-3:checked~.category label .three {
+  background: #71b7e6;
+  border-color: #d9d9d9;
+}
+form input[type="radio"] {
+  display: none;
+}
+form .button {
+  height: 45px;
+  margin: 35px 0
+}
+form .button input {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #71b7e6, #40a45f);
+  /* border: 3px solid red; */
+}
+form .button input:hover {
+  background: linear-gradient(-135deg, #71b7e6, #40a45f);
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 1000;
+}
+
+.popup span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.popup.safe {
+  color: green;
+}
+
+.popup.danger {
+  color: red;
+}
+
+#close-popup {
+  margin-top: 10px;
+  padding: 5px 10px;
+  border: none;
+  background: #007BFF;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#close-popup:hover {
+  background: #0056b3;
+}
+
+#howtouse-section{
+  display: block;
+  /* border: 1px solid orange; */
+}
+
+.judul-Howtouse {
+  display: grid;
+  position: relative;
+  border: 2px solid #40a45f;; /* Slightly thicker border for better visibility */
+  border-radius: 10px; /* Rounded corners for a softer look */
+  padding: 2rem; /* Adds inner spacing */
+  margin: 2rem auto; /* Centers the section */
+  max-width: 80%; /* Ensures it doesn't stretch too wide */
+  background-color: #f9f9f9; /* Light background for a clean look */
+  gap: 1.5rem; /* More space between elements */
+  text-align: center; /* Centers the text for a structured look */
+}
+
+.judul-Howtouse h2 {
+  font-size: 2.5vw;
+  font-weight: bold;
+  color: #015a8e; /* Green color to match the theme */
+  margin-bottom: 0.5rem;
+}
+
+.judul-Howtouse p {
+  border: none; /* Removed the red border for a cleaner appearance */
+  font-size: 1.2vw;
+  font-weight: 400;
+  color: #333; /* Dark gray for better readability */
+  padding: 1rem 2rem; /* Adjusted padding for balance */
+  line-height: 1.6rem; /* Increased line height for better readability */
+  text-align: justify; /* Justifies text for a structured layout */
+}
+
+/* Tutorial Step Layout */
+.tutorial-step {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* margin-bottom: 60px; */
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  /* border: 1px solid blue; */
+  padding: 5rem;
+}
+
+.step1,.step3{
+  padding-left: 6rem;
+}
+
+/* .step1{
+  /* /* background: linear-gradient(to top , #b6e6ab 10%, #ffffff 90%);  */
+  /* background: linear-gradient(to bottom, #ffffff 70%, #95b9d6 90%, #5688b1 100%); */
+  /* background-color: #40a45f;
+} */
+
+/* .step3{ */
+  /* /* background: linear-gradient(to top , #b6e6ab 10%, #ffffff 90%);  */
+  /* background: linear-gradient(to top, #ffffff 70%, #95b9d6 90%, #5688b1 100%); */
+/* } */
+
+/* Reverse layout for Step 2 */
+.reverse {
+  flex-direction: row;
+  display: flex;
+  padding: 2rem;
+  background-color: #5ab276;
+  color: #ffffff; 
+}
+
+.reverse h2{
+  padding-bottom: 0.5rem;
+}
+
+/* Text Section */
+.text {
+  width: 50%;
+  padding: 20px;
+  gap: 1.5rem;
+  line-height: 1.5rem;
+}
+
+.text h4{
+  color: #60ade1;
+  padding-bottom: 0.3rem;
+}
+
+.text ul{
+  padding-left: 1rem;
+}
+
+.step1 h2, .step3 h2{
+  color: #40a45f;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+
+/* Image Styling */
+.image {
+  width: 50%;
+  text-align: center;
+}
+
+.image img {
+  width: 80%;
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Safe & Unsafe Labels */
+.safe {
+  color: green;
+  font-weight: bold;
+}
+
+.unsafe {
+  color: red;
+  font-weight: bold;
+}
+
+/* Animation: Fade-in Effect */
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+  @media only screen and (max-width: 768px) {
+    
+    .tutorial-step {
+        flex-direction: column;
+        text-align: center;
+    }
+    .reverse {
+        flex-direction: column;
+    }
+    .text, .image {
+        width: 100%;
+    }
+
+    nav {
+  flex-wrap: wrap;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+nav ul {
+  flex-direction: column;
+  width: 100%;
+}
+
+nav ul li:last-of-type {
+  padding-bottom: 8px;
+}
+
+nav ul.hidden {
+  display: none;
+}
+
+.menu-icon {
+  display: flex;
+  align-items: center;
+}
+#sign-up {
+  position: static;
+  margin: 1rem auto;
+  left: 0;
+  right: 0;
+}
+
+.container {
+  max-width: 100%;
+}
+form .user-details .input-box {
+  margin-bottom: 15px;
+  width: 100%;
+}
+form .category {
+  width: 100%;
+}
+.content form .user-details {
+  max-height: 300px;
+  overflow-y: scroll;
+}
+.user-details::-webkit-scrollbar {
+  width: 5px;
+}
+
+
+}

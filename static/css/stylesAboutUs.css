@@ -1,0 +1,340 @@
+/* Regular weight */
+@font-face {
+    font-family: 'Poppins';
+    src: url('../Asset/Poppins/Poppins-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  /* Light weight */
+  @font-face {
+    font-family: 'Poppins';
+    src: url('../Asset/Poppins/Poppins-Light.ttf') format('truetype');
+    font-weight: 300;  /* Light weight */
+    font-style: normal;
+  }
+  
+  /* Bold weight */
+  @font-face {
+    font-family: 'Poppins';
+    src: url('../Asset/Poppins/Poppins-Bold.ttf') format('truetype');
+    font-weight: bold;  /* Bold weight */
+    font-style: normal;
+  }
+  
+  /* Extra Bold weight */
+  @font-face {
+    font-family: 'Poppins';
+    src: url('../Asset/Poppins/Poppins-ExtraBold.ttf') format('truetype');
+    font-weight: 800;  /* Extra bold weight */
+    font-style: normal;
+  }
+  
+  /* Black weight */
+  @font-face {
+    font-family: 'Poppins';
+    src: url('../Asset/Poppins/Poppins-Black.ttf') format('truetype');
+    font-weight: 900;  /* Black weight */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Yeseva';
+    src: url('../Asset/Yeseva_One/YesevaOne-Regular.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Berkshire';
+    src: url('../Asset/Berkshire_Swash/BerkshireSwash-Regular.ttf') format('truetype');
+  }
+  
+  *,
+  html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  }
+  body, html {
+  height: 100%;
+  
+  }
+  html::-webkit-scrollbar, body::-webkit-scrollbar {
+    display: none; /* Untuk Chrome, Safari, Edge */
+  }
+  
+  body {
+  background-color: white;
+  overflow-x: hidden;
+  padding-top: 80px; 
+  }
+  
+
+  nav {
+    position: fixed; /* Stick navbar to the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Ensure proper vertical alignment */
+    padding-left: 0.5rem;
+    padding-right: 1rem;
+    z-index: 1000; /* Ensure it's above other elements */
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+    background-color: #fff;
+  }
+  
+  nav ul {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+    margin: 0; /* Remove default margin */
+    padding: 0;
+  }
+  
+  nav div .logo {
+    width: 50px;
+    margin-left: 2rem;
+    margin-top: 0.5rem;
+  }
+  
+  nav div .hamburger {
+    width: 50px;
+    margin-right: 2rem;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    color: #191919;
+    font-weight: 600;
+    padding: 8px 0;
+    transition: all 300ms ease;
+  }
+  
+  nav ul li a:hover {
+    color: #30abf3;
+    font-size: 20px;
+  }
+
+.AboutUs {
+  border-bottom: 2px solid #30abf3;
+}
+    
+    .menu-icon {
+      background-color: rgb(172, 236, 255, 0.5);
+      font-size: 28px;
+      display: none;
+      z-index: inherit;
+  }
+  /* Background Image Styling */
+#background {
+  width: 100%;
+  height: 100vh; /* Full height of the viewport */
+  object-fit: cover; /* Ensures the image covers the screen */
+  position: absolute;
+  left: 0;
+  z-index: -2; /* Ensures it's behind other content */
+}
+
+/* Overlay Effect */
+#background-container {
+  position: absolute; /* Ensure proper stacking context */
+  width: 100%;
+  height: 100vh; /* Full height to match the background */
+}
+
+/* Bottom Gradient Overlay */
+#background-container::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20%; /* Adjust height as needed */
+  background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(241, 241, 241, 0.8), rgba(241, 241, 241, 0));
+  z-index: -1; /* Ensure overlay is above the background image but behind content */
+}
+
+
+/* Center the container */
+main {
+  display: flex;
+  justify-content: center;  /* Centers horizontally */
+  align-items: center;  /* Centers vertically */
+}
+
+.container-text{
+  display: block;
+  text-align: center;
+  position: relative;
+  font-family: 'Poppins',system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  /* top: 45%; */
+  border: 0;
+  /* left: 48%; */
+  line-height: 1.5;
+  text-transform: capitalize;
+  font-size: 1.5vw;
+  font-weight: normal;
+  justify-content: center;
+  color: #ffffff;
+  height: 100%;
+  margin-bottom: 3rem;
+  
+  /* border: 1px solid rebeccapurple; */
+}
+
+.judul-container{
+  position: relative;
+  transform: translate(0%, 60%);
+}
+  
+  .container-text h1{
+    color: rgb(0, 124, 66);
+    /* background: -webkit-linear-gradient(#fff, #b79f6e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    font-size: 3.5vw;
+    font-weight: bold;
+    text-align: center;
+    transition: text-shadow 0.4s ease-in-out;
+  }
+
+  .container-text h1:hover {
+    text-shadow: 0 0 10px rgba(144, 246, 199, 0.8),
+                 0 0 20px rgba(144, 246, 199, 0.6),
+                 0 0 30px rgba(144, 246, 199, 0.4);
+  }
+
+  .container-text p{
+    font-size: 1.2vw;
+    font-weight: normal;
+    text-align: center; 
+    color: black;
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+  /* Styling untuk Section Our Team */
+#team {
+    text-align: center;
+    padding: 50px 0;
+    display: block;
+    position: relative;
+    top: 0;
+    margin: 0;
+    /* top: -6rem; */
+    /* border: 1px solid red; */
+  }
+  
+  #team h3 {
+    font-size: 30px;
+    padding: 0;
+  }
+  
+  #team h3::after {
+    content: "";
+    border-bottom: 5px solid #30abf3;
+    width: 52px;
+    display: block;
+    margin: 20px auto;
+  }
+  
+  #team .ringkasan {
+    font-style: italic;
+    font-size: 18px;
+    color: #8d8d8d;
+    padding-left: 7rem;
+    padding-right: 7rem ;
+    margin-top: 0;
+    margin-bottom: 2.6rem;
+    line-height: 1.65rem;
+  }
+  
+  .tim {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+    
+  }
+  
+  .tim div {
+    text-align: center;
+    width: 30%;
+  }
+  
+  .tim img {
+    width: 100%;
+    max-width: 250px;
+    box-shadow: 0px -10px 30px #ccc;
+    border-radius: 60%;
+    border: #018e58 2px solid;
+    padding: 2px;
+    transition: width 0.5s ease-in-out, max-width 0.5s ease-in-out;
+  }
+
+  .tim img:hover{
+    width: 100%;
+    max-width: 300px;
+   
+  }
+  
+  .tim h6 {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .tim span {
+    display: block;
+    font-size: 16px;
+    margin-top: 3px;
+    color: #777;
+  }
+  
+  @media only screen and (max-width: 768px) {
+  
+    nav {
+      flex-wrap: wrap;
+      position: fixed;
+      width: 100%;
+      top: 0;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    nav ul li:last-of-type {
+      padding-bottom: 8px;
+    }
+  
+    nav ul.hidden {
+      display: none;
+    }
+  
+    .menu-icon {
+      display: flex;
+      align-items: center;
+    }
+    #sign-up {
+      position: static;
+      margin: 1rem auto;
+      left: 0;
+      right: 0;
+    }
+    .tim {
+        flex-direction: column;
+        align-items: center;
+      }
+    
+      .tim div {
+        width: 80%;
+      }
+    
+    
+  }
